@@ -23,4 +23,4 @@ myreplicate n x = x : myreplicate (n-1) x
 myelem :: Ord a => a -> [a] -> Bool
 myelem _ [] = False
 myelem x' (x:xs) | x' == x   = True
-               | otherwise = Main.myelem x' xs 
+               | otherwise = myelem x' xs 
