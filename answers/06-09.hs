@@ -2,79 +2,72 @@
 -- a
 
 -- Step 1
--- sum :: [Int] -> Int
+-- mysum :: [Int] -> Int
 
 -- Step 2
--- sum []     =
--- sum (x:xs) =
+-- mysum []     =
+-- mysum (x:xs) =
 
 -- Step 3
--- sum []     = 0
--- sum (x:xs) =
+-- mysum []     = 0
+-- mysum (x:xs) =
 
 -- Step 4
--- sum []     = 0
--- sum (x:xs) = x + (sum xs)
+-- mysum []     = 0
+-- mysum (x:xs) = x + (mysum xs)
 
 -- Step 5
-sum :: Num a => [a] -> a
-sum [] = 0
-sum (x:xs) = x + (Main.sum xs)
-
--- Use "Main.sum" because Prelude already has "sum"
+mysum :: Num a => [a] -> a
+mysum [] = 0
+mysum (x:xs) = x + (mysum xs)
 
 ----------------------
 -- b
 
 -- Step 1
--- take :: Int -> [a] -> [a]
+-- mytake :: Int -> [a] -> [a]
 
 -- Step 2
--- take 0 (x:xs) = 
--- take n []     = 
--- take n (x:xs) = 
+-- mytake 0 (x:xs) = 
+-- mytake n []     = 
+-- mytake n (x:xs) = 
 
 -- Step 3
--- take 0 (x:xs) = []
--- take n []     = []
--- take n (x:xs) = 
+-- mytake 0 (x:xs) = []
+-- mytake n []     = []
+-- mytake n (x:xs) = 
 
 -- Step 4
--- take 0 (x:xs) = []
--- take n []     = []
--- take n (x:xs) = x : (take (n-1) xs)
+-- mytake 0 (x:xs) = []
+-- mytake n []     = []
+-- mytake n (x:xs) = x : (mytake (n-1) xs)
 
 -- Step 5
-take :: Int -> [a] -> [a]
-take 0 _ = []
-take _ []     = []
-take n (x:xs) = x : (Main.take (n-1) xs)
-
--- Use "Main.take" because Prelude already has "take"
+mytake :: Int -> [a] -> [a]
+mytake 0 _ = []
+mytake _ []     = []
+mytake n (x:xs) = x : (mytake (n-1) xs)
 
 ----------------------
 -- c
 
 -- Step 1
--- last :: [a] -> a
+-- mylast :: [a] -> a
 
 -- Step 2
--- last (x:[]) =
--- last (x:xs) =
+-- mylast (x:[]) =
+-- mylast (x:xs) =
 
 -- Step 3
--- last (x:[]) = x
--- last (x:xs) =
+-- mylast (x:[]) = x
+-- mylast (x:xs) =
 
 -- Step 4
--- last (x:[]) = x
--- last (x:xs) = last xs
+-- mylast (x:[]) = x
+-- mylast (x:xs) = mylast xs
 
 -- Step 5
-last :: [a] -> a
-last (x:[]) = x
-last (x:xs) = Main.last xs
-
--- Use "Main.last" because Prelude already has "last"
-
+mylast :: [a] -> a
+mylast (x:[]) = x
+mylast (x:xs) = mylast xs
 
