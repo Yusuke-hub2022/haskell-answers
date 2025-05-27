@@ -5,13 +5,13 @@ unfold p h t x | p x = []
 chop8 = unfold null (take 8) (drop 8)
 
 -- map f
-map f = unfold null (f . head) (tail)
+mymap f = unfold null (f . head) (tail)
 
--- > Main.map (+1) [1,2,3]
+-- > mymap (+1) [1,2,3]
 -- [2,3,4]
 
 -- iterate f
-iterate f = unfold (\ _ -> False) f f
+myiterate f = unfold (\ _ -> False) f f
 
--- > take 5 (Main.iterate (+1) 0)
+-- > take 5 (myiterate (+1) 0)
 -- [1,2,3,4,5]
