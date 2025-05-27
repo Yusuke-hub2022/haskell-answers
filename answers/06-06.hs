@@ -1,36 +1,26 @@
 -- a
-and :: [Bool] -> Bool
-and [] = True
-and (False:xs) = False
-and (True:xs) = Main.and xs
-
--- Use "Main.and" on GHCi
+myand :: [Bool] -> Bool
+myand [] = True
+myand (False:xs) = False
+myand (True:xs) = myand xs
 
 -- b
-concat :: [[a]] -> [a]
-concat (xs:[]) = xs
-concat (xs:xss) = xs ++ Main.concat xss
-
--- Use "Main.concat" on GHCi
+myconcat :: [[a]] -> [a]
+myconcat (xs:[]) = xs
+myconcat (xs:xss) = xs ++ concat xss
 
 -- c
-replicate :: Int -> a -> [a]
-replicate 0 _ = []
-replicate n x = x : Main.replicate (n-1) x
-
--- Use "Main.replicate" on GHCi
+myreplicate :: Int -> a -> [a]
+myreplicate 0 _ = []
+myreplicate n x = x : myreplicate (n-1) x
 
 -- d
-(!!) :: [a] -> Int -> a
-(x:xs) !! 0 = x
-(x:xs) !! n = xs Main.!! (n-1)
-
--- Use "Main.!!" on GHCi
+(!!!) :: [a] -> Int -> a
+(x:xs) !!! 0 = x
+(x:xs) !!! n = xs !!! (n-1)
 
 -- e
-elem :: Ord a => a -> [a] -> Bool
-elem _ [] = False
-elem x' (x:xs) | x' == x   = True
-               | otherwise = Main.elem x' xs 
-
--- Use "Main.elem" on GHCi
+myelem :: Ord a => a -> [a] -> Bool
+myelem _ [] = False
+myelem x' (x:xs) | x' == x   = True
+               | otherwise = Main.myelem x' xs 
