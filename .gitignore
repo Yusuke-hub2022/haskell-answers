@@ -26,4 +26,4 @@ cabal.project.local~
 
 *[0-9][0-9]
 scrach.hs
-
+a.*
