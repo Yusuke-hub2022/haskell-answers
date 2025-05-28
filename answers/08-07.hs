@@ -17,6 +17,7 @@ instance Eq a => Eq (MyMaybe a) where
 -- > (MyJust 1) == (MyJust 2)
 -- False
 
--- *Can not run in GHCi. Defined in 'GHC.Classes' already 
+-- *Can not run in GHCi. It's defined in 'GHC.Classes' already.
 --instance Eq a => Eq [a] where
---   xs == ys = and [x == y | x <- xs, y <- ys]
+--   xs == ys | length xs /= length ys = False
+--            | otherwise = and [x == y | (x,y) <- zip xs ys]
