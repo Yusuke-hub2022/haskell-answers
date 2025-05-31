@@ -26,4 +26,6 @@ cabal.project.local~
 
 *[0-9][0-9]
 scrach.hs
+snipet.hs
 a.*
+.DS_Store
